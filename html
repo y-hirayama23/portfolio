@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <style>
+      body {
+        background-color: #F0E6FF; 
+        font-family: sans-serif;
+        margin: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+      h1 {
+        color: #5C2D91; 
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+      select {
+        width: 200px;
+        height: 30px;
+        margin: 20px auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <link rel="stylesheet" href="style.css">
+    <div class="container">
+      <h1>My Portfolio</h1>
+      <select id="myList">
+        <option value="">選択してください。</option>
+        <option value="経歴">経歴</option>
+        <option value="スキル">スキル</option>
+      </select>
+      <p id="display"></p>
+    
+    </div>
+  </body>
+  <script>
+    const select = document.querySelector("#myList");
+    const display = document.querySelector("#display");
+    select.addEventListener("change", function() {
+      if (select.value === "経歴") {
+        display.innerHTML = "専門学校を卒業後、現在の会社に2022年の4月より勤めています。";
+      } else if (select.value === "スキル") {
+        display.innerHTML = "基本情報技術者の資格を所持しており基本的なPCスキル、HTML,CSS,C,Java言語を学習しました。";
+      } else {
+        display.innerHTML = "";
+      }
+    });
+  </script>
+</html>
